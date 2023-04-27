@@ -46,7 +46,7 @@ class Husky:
             self.move_pub.publish(spin_cmd)
             rospy.Rate(0.5).sleep()
 
-        # Head toward flag if in view
+        # Head toward flag if in view; turn if not
         else:
             flag_obj = next(obj for obj in data.objects if obj.Class == "flag")
             # Minimum and maximum x center for the robot to proceed forward; test this out
